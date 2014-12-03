@@ -1,0 +1,12 @@
+/* line 1, ../../sass/dangersword.sass */
+html, body, section {
+  height: 100%;
+}
+
+/* line 4, ../../sass/dangersword.sass */
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
