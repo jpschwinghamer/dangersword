@@ -1,3 +1,7 @@
+$image-size: 42px
+$image-size-large: 84px
+$col-padding: 10px
+
 html, body
   height: 100%
 
@@ -6,6 +10,14 @@ section
   display: flex
   justify-content: center
   flex-direction: column
+
+.leaderboard
+  display: flex
+  flex-direction: column
+  height: 100%
+  > *
+    flex-grow: 1
+    min-height: $image-size + $col-padding * 2
 
 .player
   display: flex
@@ -20,17 +32,16 @@ section
   .score
     text-align: right
   .image
-    width: 42px
-    height: 42px
+    width: $image-size
+    height: $image-size
     background-color: #333
     margin-right: 20px
     background-size: cover
     box-shadow: inset 0 0 0 1px rgba(black, 0.05)
     overflow: hidden
-    @media (min-width: 768px)
-      width: 100px
-      height: 100px
-
+    @media (min-width: 718px) and (min-height: 718px)
+      width: $image-size-large
+      height: $image-size-large
   &.ty
     .image
       background-image: url(../images/ty.jpg)
