@@ -36,7 +36,14 @@ section {
   max-height: 1080px;
 }
 /* line 19, ../../sass/dangersword.sass */
-.leaderboard > * {
+.leaderboard .title {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+/* line 21, ../../sass/dangersword.sass */
+.leaderboard .player {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -44,7 +51,7 @@ section {
   min-height: 62px;
 }
 
-/* line 23, ../../sass/dangersword.sass */
+/* line 26, ../../sass/dangersword.sass */
 .player {
   display: -webkit-box;
   display: -webkit-flex;
@@ -60,14 +67,14 @@ section {
       -ms-flex-align: center;
           align-items: center;
 }
-/* line 27, ../../sass/dangersword.sass */
+/* line 30, ../../sass/dangersword.sass */
 .player > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-/* line 29, ../../sass/dangersword.sass */
+/* line 32, ../../sass/dangersword.sass */
 .player .bio {
   display: -webkit-box;
   display: -webkit-flex;
@@ -83,11 +90,11 @@ section {
       -ms-flex-align: center;
           align-items: center;
 }
-/* line 33, ../../sass/dangersword.sass */
+/* line 36, ../../sass/dangersword.sass */
 .player .score {
   text-align: right;
 }
-/* line 35, ../../sass/dangersword.sass */
+/* line 38, ../../sass/dangersword.sass */
 .player .image {
   width: 42px;
   height: 42px;
@@ -98,33 +105,33 @@ section {
   overflow: hidden;
 }
 @media (min-width: 718px) and (min-height: 718px) {
-  /* line 35, ../../sass/dangersword.sass */
+  /* line 38, ../../sass/dangersword.sass */
   .player .image {
     width: 84px;
     height: 84px;
   }
 }
-/* line 47, ../../sass/dangersword.sass */
+/* line 50, ../../sass/dangersword.sass */
 .player.ty .image {
   background-image: url(../images/ty.jpg);
 }
-/* line 50, ../../sass/dangersword.sass */
+/* line 53, ../../sass/dangersword.sass */
 .player.dave .image {
   background-image: url(../images/dave.jpg);
 }
-/* line 53, ../../sass/dangersword.sass */
+/* line 56, ../../sass/dangersword.sass */
 .player.nathan .image {
   background-image: url(../images/nathan.jpg);
 }
-/* line 56, ../../sass/dangersword.sass */
+/* line 59, ../../sass/dangersword.sass */
 .player.jimmy .image {
   background-image: url(../images/jimmy.jpg);
 }
-/* line 59, ../../sass/dangersword.sass */
+/* line 62, ../../sass/dangersword.sass */
 .player.michelle .image {
   background-image: url(../images/michelle.jpg);
 }
-/* line 62, ../../sass/dangersword.sass */
+/* line 65, ../../sass/dangersword.sass */
 .player.justin .image {
   background-image: url(../images/justin.jpg);
 }
