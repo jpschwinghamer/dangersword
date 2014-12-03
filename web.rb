@@ -1,5 +1,8 @@
 require 'sinatra'
+require "slim"
+require "sass"
+require "compass"
 
 get '/' do
-  "Hello, world"
+  slim :index
 end

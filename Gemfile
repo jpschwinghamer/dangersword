@@ -1,3 +1,5 @@
-source "https://rubygems.org"
-ruby "2.1.3"
-gem 'sinatra'
+source 'https://rubygems.org'
+gem "sinatra"
+gem "slim"
+gem "sass"
+gem "compass"
