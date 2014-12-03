@@ -1,15 +1,26 @@
-html, body, section
+html, body
   height: 100%
 
 section
+  min-height: 100%
   display: flex
   justify-content: center
   flex-direction: column
 
 .player
   display: flex
+  flex-direction: row
+  align-items: center
   > *
     flex-grow: 1
+  .bio
+    display: flex
+    flex-direction: row
+    align-items: center
   .score
     text-align: right
-
+  .image
+    width: 42px
+    height: 42px
+    background-color: #333
+    margin-right: 20px
