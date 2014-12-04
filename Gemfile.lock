@@ -18,6 +18,7 @@ GEM
       sass (>= 3.2, < 3.5)
     execjs (2.2.2)
     ffi (1.9.6)
+    json (1.8.1)
     multi_json (1.10.1)
     rack (1.5.2)
     rack-protection (1.5.3)
@@ -42,6 +43,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   compass
+  json
   sass
   sinatra
   slim

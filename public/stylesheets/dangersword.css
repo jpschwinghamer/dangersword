@@ -135,3 +135,7 @@ section {
 .player.justin .image {
   background-image: url(../images/justin.jpg);
 }
+/* line 68, ../../sass/dangersword.sass */
+.player.aaron .image {
+  background-image: url(../images/aaron.jpg);
+}

@@ -1,6 +1,10 @@
 Ds = window.Ds || {};
 
-Ds.Testing = function(){
-  console.log("This is working.")
+Ds.getScores = function(){
+  $.getJSON("scores.json", function(data){
+    $.each(data, function(player, score){
+      console.log(player + ": " + score)
+    })
+  })
 }
 
