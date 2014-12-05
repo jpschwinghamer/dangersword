@@ -1,41 +1,65 @@
-var players = [
-  {name: "Dave", score: Math.round(Math.random() * 100)},
-  {name: "Ty", score: Math.round(Math.random() * 100)},
-  {name: "Michelle", score: Math.round(Math.random() * 100)},
-  {name: "Justin", score: Math.round(Math.random() * 100)},
-  {name: "Nathan", score: Math.round(Math.random() * 100)},
-  {name: "Jimmy", score: Math.round(Math.random() * 100)},
-  {name: "Chris", score: Math.round(Math.random() * 100)},
-  {name: "Aaron", score: Math.round(Math.random() * 100)}
-];
+var players = [];
+var activePlayer;
 
+// Simple sorting function
 function sortByScore(a,b) {
-  return b.score - a.score;
+  return b.average - a.average;
 };
 
-function buildScoreboard(){
-  $.each(players, function(key, player){
-  $('.leaderboard').append('<div class="player ' + player.name.toLowerCase() + ' border-bottom"><div class="bio"><div class="image"></div><h4 class="name">'+ player.name + '</h4></div><h4 class="score">' + player.score + '</h4></div>')
-  });
-};
-
-function getScores(){
-  $.getJSON("scores.json", function(data){
-    $.each(data, function(player, score){
-      console.log(player + ": " + score)
-    });
-  });
-};
-
-function sendScores(){
-  $.each(players, function(key, val){
-    console.log(val);
-  });
-};
-
+// Initialize the scoreboard
 function initialize(){
-  players.sort(sortByScore);
-  buildScoreboard()
+  getScores();
 };
 
-initialize()
+// Resets players array, fetches new data from JSON, then runs the builder
+function getScores(){
+  players = [];
+  $.getJSON("scores.json", function(data){
+    $.each(data, function(index, player){
+      players.push(player);
+    });
+  }).then(updateScoreboard)
+};
+
+// Add a player
+function addPlayer(firstname){
+  players.push({name: firstname, attempts: 0, score: 0, average: 0});
+  updateScores();
+}
+
+// Add a score
+function addScore(firstname, score){
+  for(var i in players){
+    if(players[i].name == firstname) {
+      players[i].attempts = players[i].attempts + 1;
+      players[i].score += score;
+      players[i].average = players[i].score/players[i].attempts;
+      updateScores()
+      break;
+    };
+  };
+};
+
+// Builds the scoreboard
+function updateScoreboard(){
+  $('.player').remove();
+  players.sort(sortByScore);
+  $.each(players, function(key, player){
+  $('.leaderboard').append('<div class="player ' + player.name.toLowerCase() + ' border-bottom"><div class="bio"><div class="image"></div><h4 class="name">'+ player.name + '</h4></div><h4 class="score">' + player.attempts + '</h4><h4 class="score">' + player.average + '</h4></div>')
+  });
+};
+
+// Sends updated scores
+function updateScores(){
+  $.post("update.json", {
+    data: JSON.stringify(players)
+  }, updateScoreboard)
+};
+
+// Polls for new scores every 4 seconds
+var pollScores = setInterval(function(){
+  getScores()
+}, 4000);
+
+// Initialize drrrrr
+initialize();
