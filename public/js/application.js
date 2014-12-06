@@ -45,7 +45,7 @@ function updateScoreboard(){
   $('.player').remove();
   players.sort(sortByScore);
   $.each(players, function(key, player){
-  $('.leaderboard').append('<div class="player ' + player.name.toLowerCase() + ' border-bottom"><div class="bio"><div class="image"></div><h4 class="name">'+ player.name + '</h4></div><h4 class="score">' + player.average + '</h4></div>')
+  $('.leaderboard').append('<div class="player ' + player.name.toLowerCase() + ' border-bottom"><div class="bio"><div class="image"></div><h4 class="name">'+ player.name + '</h4></div><h4 class="score">' + player.average + '<sup>' + player.attempts + '</sup></h4></div>')
   });
 };
 
