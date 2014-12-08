@@ -1,4 +1,4 @@
 .sass-cache/
 **/*.sassc
 **/*.css
-public/scores.json
+public/default_scores.json

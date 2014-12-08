@@ -76,8 +76,8 @@ html, body {
   background-image: url(../images/dave.jpg);
 }
 /* line 44, ../../sass/dangersword.sass */
-.player.nathan .image {
-  background-image: url(../images/nathan.jpg);
+.player.nate .image {
+  background-image: url(../images/nate.jpg);
 }
 /* line 47, ../../sass/dangersword.sass */
 .player.jimmy .image {
@@ -107,8 +107,12 @@ html, body {
 .player.catherine .image {
   background-image: url(../images/catherine.jpg);
 }
-
 /* line 68, ../../sass/dangersword.sass */
+.player.jacob .image {
+  background-image: url(../images/jacob.jpg);
+}
+
+/* line 71, ../../sass/dangersword.sass */
 .scorecard {
   background-color: rgba(92, 184, 230, 0.95);
   position: fixed;
@@ -121,12 +125,12 @@ html, body {
   -webkit-transition: 0.25s all ease-in-out;
           transition: 0.25s all ease-in-out;
 }
-/* line 77, ../../sass/dangersword.sass */
+/* line 80, ../../sass/dangersword.sass */
 .scorecard-active .scorecard {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
-/* line 79, ../../sass/dangersword.sass */
+/* line 82, ../../sass/dangersword.sass */
 .scorecard .button {
   min-width: 0;
   display: inline-block;
