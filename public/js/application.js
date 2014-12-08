@@ -100,8 +100,8 @@ function updateScoreboard(){
 // Sends updated scores
 function updateScores(){
   $.post("update.json", {
-    data: JSON.stringify(players)
-  }, updateScoreboard)
+    data: JSON.stringify(players, null, '  ')
+  })
 };
 
 // Resets all scores
