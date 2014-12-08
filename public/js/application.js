@@ -55,6 +55,7 @@ function deletePlayer(firstname){
 
 // Select player to begin scoring
 function activateScorecard(firstname){
+  $('.scorecard .image').css({'background-image' : 'url(/images/' + firstname + '.jpg)'});
   $('.scorecard h4').html("Give " + firstname + " a score:");
   $('body').addClass('scorecard-active');
 }
@@ -92,8 +93,12 @@ function getScores(){
 function updateScoreboard(){
   $('.player').remove();
   players.sort(sortByScore);
+  var count = 0;
   $.each(players, function(key, player){
-  $('.leaderboard').append('<div class="player ' + player.name.toLowerCase() + ' border-bottom" data-player-name="' + player.name + '"><div class="bio"><div class="image"></div><h4 class="name">'+ player.name + '</h4></div><h4 class="score">' + player.average + '/<span>' + player.attempts + '</span></h4></div>')
+    if (count < 10){
+      $('.leaderboard').append('<div class="player ' + player.name.toLowerCase() + ' border-bottom" data-player-name="' + player.name + '"><div class="bio"><div class="image"></div><h4 class="name">'+ player.name + '</h4></div><h4 class="score">' + player.average + '/<span>' + player.attempts + '</span></h4></div>')
+      count++;
+    }
   });
 };
 

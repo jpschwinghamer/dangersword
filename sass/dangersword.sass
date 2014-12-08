@@ -8,6 +8,9 @@ html, body
 .leaderboard
   min-height: 100%
 
+.logo
+  font-size: 6em
+
 .player
   cursor: pointer
   display: flex
@@ -77,10 +80,17 @@ html, body
   z-index: 1
   transform: translate3d(0,100%,0)
   transition: 0.25s all ease-in-out
+  .image
+    display: inline-block
+    width: $image-size
+    height: $image-size
+    background-size: cover
+    @media (min-width: 718px) and (min-height: 718px)
+      width: $image-size-large
+      height: $image-size-large
   .scorecard-active &
     transform: translate3d(0,0,0)
   .button
-    min-width: 0
     display: inline-block
     margin: $col-padding
 
