@@ -1,5 +1,4 @@
 var players = [];
-var activePlayer;
 
 // Simple sorting function
 function sortByScore(a,b) {
@@ -25,6 +24,16 @@ function getScores(){
 function addPlayer(firstname){
   players.push({name: firstname, attempts: 0, score: 0, average: 0});
   updateScores();
+}
+
+// Delete a player
+function deletePlayer(firstname){
+  var player = players.indexOf(firstname);
+  for(var i in players){
+    if(players[i].name == firstname){
+      players.splice(i, 1);
+    }
+  }
 }
 
 // Add a score
