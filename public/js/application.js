@@ -55,7 +55,7 @@ function deletePlayer(firstname){
 
 // Select player to begin scoring
 function activateScorecard(firstname){
-  $('.scorecard .image').css({'background-image' : 'url(/images/' + firstname + '.jpg)'});
+  $('.scorecard .image').css({'background-image' : 'url(/images/' + firstname.toLowerCase() + '.jpg)'});
   $('.scorecard h4').html("Give " + firstname + " a score:");
   $('body').addClass('scorecard-active');
 }
