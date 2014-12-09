@@ -4,13 +4,19 @@ require "sass"
 require "compass"
 require "autoprefixer-rails"
 require "json"
+require 'open-uri'
 
 SCORES_PATH = File.expand_path("public/scores.json", File.dirname(__FILE__))
 
-def initialize
-  FileUtils.cp("public/default_scores.json", 'public/scores.json') unless File.exist?(SCORES_PATH)
-  @scores = File.read(SCORES_PATH)
+if development?
+  url = "http://www.dangersword.com/scores.json"
+  open(url, 'rb') do |feed|
+    File.open(SCORES_PATH, 'wb') do |file|
+      file.write(feed.read)
+    end
+  end
 end
+
 
 get '/' do
   slim :index
@@ -31,9 +37,4 @@ post '/update.json' do
     file.close
     file.unlink
   end
-end
-
-get '/scores' do
-  content_type :json
-  @scores
 end
