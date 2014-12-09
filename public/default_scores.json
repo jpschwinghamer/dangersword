@@ -1,15 +1,45 @@
 [
   {
+    "name": "Chris",
+    "attempts": 6,
+    "score": 280,
+    "average": 46.67
+  },
+  {
+    "name": "Nate",
+    "attempts": 6,
+    "score": 220,
+    "average": 36.67
+  },
+  {
     "name": "Ty",
-    "attempts": 0,
-    "score": 0,
-    "average": 0
+    "attempts": 6,
+    "score": 160,
+    "average": 26.67
+  },
+  {
+    "name": "Justin",
+    "attempts": 6,
+    "score": 120,
+    "average": 20
+  },
+  {
+    "name": "Jacob",
+    "attempts": 6,
+    "score": 100,
+    "average": 16.67
   },
   {
     "name": "Dave",
-    "attempts": 0,
-    "score": 0,
-    "average": 0
+    "attempts": 6,
+    "score": 160,
+    "average": 10
+  },
+  {
+    "name": "Ghassan",
+    "attempts": 6,
+    "score": 40,
+    "average": 6.67
   },
   {
     "name": "Michelle",
@@ -24,30 +54,6 @@
     "average": 0
   },
   {
-    "name": "Nate",
-    "attempts": 0,
-    "score": 0,
-    "average": 0
-  },
-  {
-    "name": "Justin",
-    "attempts": 0,
-    "score": 0,
-    "average": 0
-  },
-  {
-    "name": "Jacob",
-    "attempts": 0,
-    "score": 0,
-    "average": 0
-  },
-  {
-    "name": "Chris",
-    "attempts": 0,
-    "score": 0,
-    "average": 0
-  },
-  {
     "name": "Aaron",
     "attempts": 0,
     "score": 0,
@@ -55,6 +61,12 @@
   },
   {
     "name": "Jaclyn",
+    "attempts": 0,
+    "score": 0,
+    "average": 0
+  },
+  {
+    "name": "Catherine",
     "attempts": 0,
     "score": 0,
     "average": 0
