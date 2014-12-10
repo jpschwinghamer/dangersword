@@ -2,18 +2,18 @@
 var players = [];
 var selectedPlayer = "";
 
-var pubnub = PUBNUB.init({
-  publish_key: 'pub-c-a7321d4d-92be-47cb-bd61-ccf219a33e89',
-  subscribe_key: 'sub-c-ca1d2302-80af-11e4-bfb6-02ee2ddab7fe'
-});
+// var pubnub = PUBNUB.init({
+//   publish_key: 'pub-c-a7321d4d-92be-47cb-bd61-ccf219a33e89',
+//   subscribe_key: 'sub-c-ca1d2302-80af-11e4-bfb6-02ee2ddab7fe'
+// });
 
-pubnub.subscribe({
-  channel: 'dangerscores',
-  message: function(m){
-    console.log(m);
-    getScores();
-  }
-});
+// pubnub.subscribe({
+//   channel: 'dangerscores',
+//   message: function(m){
+//     console.log(m);
+//     getScores();
+//   }
+// });
 
 // Simple sorting function
 function sortByScore(a,b) {
@@ -93,7 +93,7 @@ function addScore(firstname, score){
   };
   updateScores();
   updateScoreboard();
-  pubnub.publish({channel: 'dangerscores', message: firstname + " just scored a " + score})
+  // pubnub.publish({channel: 'dangerscores', message: firstname + " just scored a " + score})
 };
 
 // Resets players array, fetches new data from JSON, then runs the builder
