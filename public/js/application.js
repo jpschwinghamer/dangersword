@@ -117,7 +117,7 @@ function updateScoreboard(){
         </div> \
         <div class="hidden show-at-medium graph"> \
           <svg viewbox="0 0 1000 100"> \
-            <path fill="none" stroke="" preserveAspectRatio="xMidYMax" stroke-linejoin="round" stroke-linecap="round"  d="' + recentScorePath + '"/> \
+            <path fill="none" stroke="" stroke-width="2" preserveAspectRatio="xMidYMax" stroke-linejoin="round" stroke-linecap="round"  d="' + recentScorePath + '"/> \
           </svg> \
         </div> \
         <div class="scores"> \
