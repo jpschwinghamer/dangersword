@@ -133,6 +133,16 @@ function updateScores(){
   })
 };
 
+// Animate graphs
+function getGraphLengths(){
+  $('path').each(function(){
+    var length = this.getTotalLength();
+    this.style.strokeDasharray = length + ' ' + length;
+    // this.style.strokeDashoffset = length;
+    this.getBoundingClientRect();
+  })
+}
+
 // Resets all scores
 function resetScores(){
   for(var i in players){
