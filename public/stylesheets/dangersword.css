@@ -114,27 +114,31 @@ html, body {
 .player.ghassan .image {
   background-image: url(../images/ghassan.jpg);
 }
-/* line 74, ../../sass/dangersword.sass */
+/* line 75, ../../sass/dangersword.sass */
+.player.salih .image {
+  background-image: url(../images/salih.jpg);
+}
+/* line 77, ../../sass/dangersword.sass */
 .player .graph {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-/* line 76, ../../sass/dangersword.sass */
+/* line 79, ../../sass/dangersword.sass */
 .player .graph svg {
   width: 100%;
   height: auto;
   max-height: 100px;
 }
-/* line 80, ../../sass/dangersword.sass */
+/* line 83, ../../sass/dangersword.sass */
 .player .graph path {
   stroke-dasharray: 1300px 1300px;
   stroke-dashoffset: 0;
   -webkit-animation: 4s animatePath ease-in-out infinite;
           animation: 4s animatePath ease-in-out infinite;
 }
-/* line 85, ../../sass/dangersword.sass */
+/* line 88, ../../sass/dangersword.sass */
 .player .scores {
   width: 150px;
   -webkit-box-flex: 0;
@@ -142,16 +146,16 @@ html, body {
       -ms-flex: 0 0 150px;
           flex: 0 0 150px;
 }
-/* line 88, ../../sass/dangersword.sass */
+/* line 91, ../../sass/dangersword.sass */
 .player .score {
   text-align: right;
 }
-/* line 90, ../../sass/dangersword.sass */
+/* line 93, ../../sass/dangersword.sass */
 .player .score span {
   opacity: 0.3;
 }
 
-/* line 93, ../../sass/dangersword.sass */
+/* line 96, ../../sass/dangersword.sass */
 .scorecard {
   background-color: rgba(92, 184, 230, 0.95);
   position: fixed;
@@ -164,7 +168,7 @@ html, body {
   -webkit-transition: 0.25s all ease-in-out;
           transition: 0.25s all ease-in-out;
 }
-/* line 102, ../../sass/dangersword.sass */
+/* line 105, ../../sass/dangersword.sass */
 .scorecard .image {
   display: inline-block;
   width: 42px;
@@ -172,18 +176,18 @@ html, body {
   background-size: cover;
 }
 @media (min-width: 718px) and (min-height: 718px) {
-  /* line 102, ../../sass/dangersword.sass */
+  /* line 105, ../../sass/dangersword.sass */
   .scorecard .image {
     width: 100px;
     height: 100px;
   }
 }
-/* line 110, ../../sass/dangersword.sass */
+/* line 113, ../../sass/dangersword.sass */
 .scorecard-active .scorecard {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
-/* line 112, ../../sass/dangersword.sass */
+/* line 115, ../../sass/dangersword.sass */
 .scorecard .button {
   display: inline-block;
   margin: 10px;
