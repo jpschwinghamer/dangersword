@@ -25,7 +25,6 @@ end
 post '/update.json' do
   scores = params[:data]
   return if scores.empty?
-  @scores = scores
   file = Tempfile.new('scores.json')
   begin
     file.write(scores)
