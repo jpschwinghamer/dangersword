@@ -35,7 +35,7 @@ function enableBindings(){
 
 // Add a player
 function addPlayer(firstname){
-  players.push({name: firstname, attempts: 0, score: 0, average: 0});
+  players.push({name: firstname, attempts: 0, score: 0, average: 0, recent: [0,0,0,0,0,0,0,0,0,0]});
   updateScores();
   updateScoreboard();
 }
@@ -72,6 +72,8 @@ function addScore(firstname, score){
       players[i].attempts = players[i].attempts + 1;
       players[i].score += score;
       players[i].average = ((players[i].score/players[i].attempts).toFixed(2))/1;
+      players[i].recent.unshift(score);
+      players[i].recent.length = 10;
       break;
     };
   };
@@ -95,13 +97,31 @@ function updateScoreboard(){
   players.sort(sortByScore);
   var count = 0;
   $.each(players, function(key, player){
+    var recentScorePath = "";
+    for(var i in player.recent){
+      if(i == 0){
+        var point = "M" + (i * 100) + "," + Math.abs(player.recent[i] - 100);
+        recentScorePath = recentScorePath.concat(point);
+      }
+      else {
+        var point = "L" + (i * 100) + "," + Math.abs(player.recent[i] - 100);
+        recentScorePath = recentScorePath.concat(point);
+      }
+    }
     $('.leaderboard').append('\
       <div class="player ' + player.name.toLowerCase() + ' border-bottom" data-player-name="' + player.name + '"> \
         <div class="bio"> \
           <div class="image"></div> \
           <h4 class="name">'+ player.name + '</h4> \
         </div> \
-        <h4 class="score">' + player.average + '/<span>' + player.attempts + '</span></h4> \
+        <div class="hidden show-at-medium graph"> \
+          <svg viewbox="0 0 1000 100"> \
+            <path fill="none" stroke="" stroke-linejoin="round" stroke-linecap="round"  d="' + recentScorePath + '"/> \
+          </svg> \
+        </div> \
+        <div class="scores"> \
+          <h4 class="score">' + player.average + '/<span>' + player.attempts + '</span></h4> \
+        </div> \
       </div>')
   });
 };

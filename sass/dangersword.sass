@@ -15,18 +15,15 @@ html, body
   cursor: pointer
   display: flex
   align-items: center
+  justify-content: space-between
   padding: $col-padding
-  > *
-    flex-grow: 1
   &:hover
     background-color: #fafafa
-  .score
-    text-align: right
-    span
-      opacity: 0.2
   .bio
     display: flex
     align-items: center
+    width: 300px
+    flex: 0 0 300px
   .image
     width: $image-size
     height: $image-size
@@ -73,6 +70,18 @@ html, body
   &.ghassan
     .image
       background-image: url(../images/ghassan.jpg)
+  .graph
+    flex-grow: 1
+    svg
+      width: 100%
+      height: auto
+  .scores
+    width: 100px
+    flex: 0 0 100px
+    text-align: right
+    span
+      opacity: 0.3
+
 
 .scorecard
   background-color: rgba(#5cb8e6, 0.95)
