@@ -1,6 +1,7 @@
 $image-size: 42px
-$image-size-large: 84px
+$image-size-large: 100px
 $col-padding: 10px
+$path-length: 1300px
 
 html, body
   height: 100%
@@ -75,6 +76,12 @@ html, body
     svg
       width: 100%
       height: auto
+      max-height: $image-size-large
+    path
+      stroke-dasharray: $path-length $path-length
+      stroke-dashoffset: 0
+      animation: 4s animatePath ease-in-out infinite
+
   .scores
     width: 150px
     flex: 0 0 150px
@@ -82,7 +89,6 @@ html, body
     text-align: right
     span
       opacity: 0.3
-
 
 .scorecard
   background-color: rgba(#5cb8e6, 0.95)
@@ -107,3 +113,12 @@ html, body
     display: inline-block
     margin: $col-padding
 
+@keyframes animatePath
+  0%
+    stroke-dashoffset: -$path-length
+  25%
+    stroke-dashoffset: 0
+  75%
+    stroke-dashoffset: 0
+  100%
+    stroke-dashoffset: $path-length

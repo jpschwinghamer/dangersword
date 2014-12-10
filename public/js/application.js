@@ -98,6 +98,7 @@ function updateScoreboard(){
   var count = 0;
   $.each(players, function(key, player){
     var recentScorePath = "";
+    // Iterate through recent scores and build up svg path data
     for(var i in player.recent){
       if(i == 0){
         var point = "M" + (1000 - i * 100) + "," + Math.abs(player.recent[i] - 100);
@@ -116,13 +117,14 @@ function updateScoreboard(){
         </div> \
         <div class="hidden show-at-medium graph"> \
           <svg viewbox="0 0 1000 100"> \
-            <path fill="none" stroke="" stroke-linejoin="round" stroke-linecap="round"  d="' + recentScorePath + '"/> \
+            <path fill="none" stroke="" preserveAspectRatio="xMidYMax" stroke-linejoin="round" stroke-linecap="round"  d="' + recentScorePath + '"/> \
           </svg> \
         </div> \
         <div class="scores"> \
           <h4 class="score">' + player.average + '/<span>' + player.attempts + '</span></h4> \
         </div> \
-      </div>')
+      </div>'
+    );
   });
 };
 
@@ -132,16 +134,6 @@ function updateScores(){
     data: JSON.stringify(players, null, '  ')
   })
 };
-
-// Animate graphs
-function getGraphLengths(){
-  $('path').each(function(){
-    var length = this.getTotalLength();
-    this.style.strokeDasharray = length + ' ' + length;
-    // this.style.strokeDashoffset = length;
-    this.getBoundingClientRect();
-  })
-}
 
 // Resets all scores
 function resetScores(){
