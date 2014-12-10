@@ -90,6 +90,24 @@
     ]
   },
   {
+    "name": "Ghassan",
+    "attempts": 12,
+    "score": 220,
+    "average": 18.33,
+    "recent": [
+      60,
+      20,
+      40,
+      0,
+      40,
+      20,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
     "name": "Michelle",
     "attempts": 6,
     "score": 80,
@@ -112,24 +130,6 @@
     "attempts": 15,
     "score": 180,
     "average": 12,
-    "recent": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
-    "name": "Ghassan",
-    "attempts": 6,
-    "score": 40,
-    "average": 6.67,
     "recent": [
       0,
       0,
