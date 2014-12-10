@@ -44,11 +44,11 @@ html, body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 300px;
+  width: 215px;
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 300px;
-      -ms-flex: 0 0 300px;
-          flex: 0 0 300px;
+  -webkit-flex: 0 0 215px;
+      -ms-flex: 0 0 215px;
+          flex: 0 0 215px;
 }
 /* line 27, ../../sass/dangersword.sass */
 .player .image {

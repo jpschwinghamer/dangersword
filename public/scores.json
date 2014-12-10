@@ -55,31 +55,13 @@
   },
   {
     "name": "Justin",
-    "attempts": 6,
-    "score": 120,
-    "average": 20,
-    "recent": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
-    "name": "Dave",
-    "attempts": 12,
+    "attempts": 9,
     "score": 200,
-    "average": 16.67,
+    "average": 22.22,
     "recent": [
-      0,
-      0,
-      0,
+      20,
+      40,
+      20,
       0,
       0,
       0,
@@ -101,6 +83,24 @@
       0,
       40,
       20,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "Dave",
+    "attempts": 15,
+    "score": 240,
+    "average": 16,
+    "recent": [
+      20,
+      20,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,

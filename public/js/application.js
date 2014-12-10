@@ -100,11 +100,11 @@ function updateScoreboard(){
     var recentScorePath = "";
     for(var i in player.recent){
       if(i == 0){
-        var point = "M" + (i * 100) + "," + Math.abs(player.recent[i] - 100);
+        var point = "M" + (1000 - i * 100) + "," + Math.abs(player.recent[i] - 100);
         recentScorePath = recentScorePath.concat(point);
       }
       else {
-        var point = "L" + (i * 100) + "," + Math.abs(player.recent[i] - 100);
+        var point = "L" + (1000 - i * 100) + "," + Math.abs(player.recent[i] - 100);
         recentScorePath = recentScorePath.concat(point);
       }
     }
