@@ -1,9 +1,9 @@
 [
   {
     "name": "Chris",
-    "attempts": 6,
-    "score": 280,
-    "average": 46.67
+    "attempts": 12,
+    "score": 440,
+    "average": 36.67
   },
   {
     "name": "Nate",
@@ -24,28 +24,28 @@
     "average": 20
   },
   {
-    "name": "Jacob",
-    "attempts": 6,
-    "score": 100,
+    "name": "Dave",
+    "attempts": 12,
+    "score": 200,
     "average": 16.67
   },
   {
-    "name": "Dave",
+    "name": "Michelle",
     "attempts": 6,
-    "score": 160,
-    "average": 10
+    "score": 80,
+    "average": 13.33
+  },
+  {
+    "name": "Jacob",
+    "attempts": 15,
+    "score": 180,
+    "average": 12
   },
   {
     "name": "Ghassan",
     "attempts": 6,
     "score": 40,
     "average": 6.67
-  },
-  {
-    "name": "Michelle",
-    "attempts": 0,
-    "score": 0,
-    "average": 0
   },
   {
     "name": "Jimmy",
