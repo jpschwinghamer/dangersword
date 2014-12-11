@@ -1,13 +1,13 @@
 [
   {
-    "name": "Nate",
-    "attempts": 9,
-    "score": 360,
-    "average": 40,
+    "name": "Jimmy",
+    "attempts": 3,
+    "score": 140,
+    "average": 46.67,
     "recent": [
-      60,
+      20,
       40,
-      40,
+      80,
       0,
       0,
       0,
@@ -18,14 +18,32 @@
     ]
   },
   {
-    "name": "Chris",
+    "name": "Nate",
     "attempts": 12,
-    "score": 440,
-    "average": 36.67,
+    "score": 480,
+    "average": 40,
     "recent": [
+      20,
+      60,
+      40,
+      60,
+      40,
+      40,
       0,
       0,
       0,
+      0
+    ]
+  },
+  {
+    "name": "Chris",
+    "attempts": 15,
+    "score": 580,
+    "average": 38.67,
+    "recent": [
+      40,
+      40,
+      60,
       0,
       0,
       0,
@@ -55,16 +73,16 @@
   },
   {
     "name": "Justin",
-    "attempts": 9,
-    "score": 200,
-    "average": 22.22,
+    "attempts": 12,
+    "score": 320,
+    "average": 26.67,
     "recent": [
+      40,
+      40,
+      40,
       20,
       40,
       20,
-      0,
-      0,
-      0,
       0,
       0,
       0,
@@ -145,36 +163,18 @@
   },
   {
     "name": "Jacob",
-    "attempts": 18,
+    "attempts": 24,
     "score": 240,
-    "average": 13.33,
+    "average": 10,
     "recent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       60,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
-    "name": "Jimmy",
-    "attempts": 0,
-    "score": 0,
-    "average": 0,
-    "recent": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       0,
       0
     ]
