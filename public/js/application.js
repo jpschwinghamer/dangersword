@@ -156,6 +156,7 @@ function resetScores(){
     players[i].attempts = 0;
     players[i].score = 0;
     players[i].average = 0;
+    players[i].recent = [0,0,0,0,0,0,0,0,0,0];
   };
   updateScores();
   updateScoreboard();
