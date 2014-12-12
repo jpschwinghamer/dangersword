@@ -1,29 +1,11 @@
 [
   {
-    "name": "Justin",
-    "attempts": 0,
-    "score": 0,
-    "average": 0,
+    "name": "Ghassan",
+    "attempts": 3,
+    "score": 40,
+    "average": 13.33,
     "recent": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
-    "name": "Zach",
-    "attempts": 0,
-    "score": 0,
-    "average": 0,
-    "recent": [
-      0,
+      40,
       0,
       0,
       0,
@@ -108,7 +90,7 @@
     ]
   },
   {
-    "name": "Salih",
+    "name": "Dave",
     "attempts": 0,
     "score": 0,
     "average": 0,
@@ -126,7 +108,7 @@
     ]
   },
   {
-    "name": "Ghassan",
+    "name": "Justin",
     "attempts": 0,
     "score": 0,
     "average": 0,
@@ -198,7 +180,25 @@
     ]
   },
   {
-    "name": "Dave",
+    "name": "Zach",
+    "attempts": 0,
+    "score": 0,
+    "average": 0,
+    "recent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "Salih",
     "attempts": 0,
     "score": 0,
     "average": 0,

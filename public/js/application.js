@@ -2,18 +2,18 @@
 var players = [];
 var selectedPlayer = "";
 
-// var pubnub = PUBNUB.init({
-//   publish_key: 'pub-c-a7321d4d-92be-47cb-bd61-ccf219a33e89',
-//   subscribe_key: 'sub-c-ca1d2302-80af-11e4-bfb6-02ee2ddab7fe'
-// });
+var pubnub = PUBNUB.init({
+  publish_key: 'pub-c-a7321d4d-92be-47cb-bd61-ccf219a33e89',
+  subscribe_key: 'sub-c-ca1d2302-80af-11e4-bfb6-02ee2ddab7fe'
+});
 
-// pubnub.subscribe({
-//   channel: 'dangerscores',
-//   message: function(m){
-//     console.log(m);
-//     getScores();
-//   }
-// });
+pubnub.subscribe({
+  channel: 'dangerscores',
+  message: function(m){
+    console.log(m);
+    getScores();
+  }
+});
 
 // Simple sorting function
 function sortByScore(a,b) {
@@ -51,7 +51,6 @@ function enableBindings(){
 function addPlayer(firstname){
   players.push({name: firstname, attempts: 0, score: 0, average: 0, recent: [0,0,0,0,0,0,0,0,0,0]});
   updateScores();
-  updateScoreboard();
 }
 
 // Delete a player
@@ -64,7 +63,6 @@ function deletePlayer(firstname){
     };
   };
   updateScores();
-  updateScoreboard();
 }
 
 // Select player to begin scoring
@@ -92,8 +90,6 @@ function addScore(firstname, score){
     };
   };
   updateScores();
-  updateScoreboard();
-  // pubnub.publish({channel: 'dangerscores', message: firstname + " just scored a " + score})
 };
 
 // Resets players array, fetches new data from JSON, then runs the builder
@@ -103,7 +99,7 @@ function getScores(){
     $.each(data, function(index, player){
       players.push(player);
     });
-  }).then(updateScoreboard)
+  }).done(updateScoreboard)
 };
 
 // Builds the scoreboard
@@ -147,7 +143,7 @@ function updateScoreboard(){
 function updateScores(){
   $.post("update.json", {
     data: JSON.stringify(players, null, '  ')
-  })
+  }).done(pubnub.publish({channel: 'dangerscores', message: " "}))
 };
 
 // Resets all scores
