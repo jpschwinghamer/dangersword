@@ -132,7 +132,7 @@ function updateScoreboard(){
           </svg> \
         </div> \
         <div class="scores"> \
-          <h4 class="score">' + player.average + '/<span>' + player.attempts + '</span></h4> \
+          <h4 class="score">' + player.average + '<span class="hidden show-at-medium inline">/' + player.attempts + '</span></h4> \
         </div> \
       </div>'
     );

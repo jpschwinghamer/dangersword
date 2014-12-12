@@ -2,9 +2,13 @@ $image-size: 42px
 $image-size-large: 100px
 $col-padding: 10px
 $path-length: 1300px
+$medium-width: 718px
 
 html, body
   height: 100%
+
+.content
+  width: 90%
 
 .leaderboard
   min-height: 100%
@@ -23,8 +27,9 @@ html, body
   .bio
     display: flex
     align-items: center
-    width: 245px
-    flex: 0 0 245px
+    @media (min-width: $medium-width)
+      width: 245px
+      flex: 0 0 245px
   .image
     width: $image-size
     height: $image-size
@@ -32,7 +37,7 @@ html, body
     background-size: cover
     box-shadow: inset 0 0 0 1px rgba(black, 0.05)
     overflow: hidden
-    @media (min-width: 718px) and (min-height: 718px)
+    @media (min-width: $medium-width) and (min-height: $medium-width)
       width: $image-size-large
       height: $image-size-large
   &.ty
@@ -89,8 +94,9 @@ html, body
       animation: 4s animatePath ease-in-out infinite
 
   .scores
-    width: 150px
-    flex: 0 0 150px
+    @media (min-width: $medium-width)
+      width: 150px
+      flex: 0 0 150px
   .score
     text-align: right
     span
@@ -110,7 +116,7 @@ html, body
     width: $image-size
     height: $image-size
     background-size: cover
-    @media (min-width: 718px) and (min-height: 718px)
+    @media (min-width: $medium-width) and (min-height: $medium-width)
       width: $image-size-large
       height: $image-size-large
   .scorecard-active &
