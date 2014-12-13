@@ -1,5 +1,23 @@
 [
   {
+    "name": "Justin",
+    "attempts": 0,
+    "score": 0,
+    "average": 0,
+    "recent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
     "name": "Salih",
     "attempts": 3,
     "score": 40,
@@ -36,60 +54,6 @@
     ]
   },
   {
-    "name": "Nate",
-    "attempts": 0,
-    "score": 0,
-    "average": 0,
-    "recent": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
-    "name": "Ty",
-    "attempts": 0,
-    "score": 0,
-    "average": 0,
-    "recent": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
-    "name": "Chris",
-    "attempts": 0,
-    "score": 0,
-    "average": 0,
-    "recent": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
     "name": "Dave",
     "attempts": 0,
     "score": 0,
@@ -108,7 +72,7 @@
     ]
   },
   {
-    "name": "Justin",
+    "name": "Nate",
     "attempts": 0,
     "score": 0,
     "average": 0,
@@ -126,7 +90,7 @@
     ]
   },
   {
-    "name": "Michelle",
+    "name": "Jimmy",
     "attempts": 0,
     "score": 0,
     "average": 0,
@@ -144,7 +108,7 @@
     ]
   },
   {
-    "name": "Jacob",
+    "name": "Ty",
     "attempts": 0,
     "score": 0,
     "average": 0,
@@ -198,7 +162,43 @@
     ]
   },
   {
-    "name": "Jimmy",
+    "name": "Chris",
+    "attempts": 0,
+    "score": 0,
+    "average": 0,
+    "recent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "Michelle",
+    "attempts": 0,
+    "score": 0,
+    "average": 0,
+    "recent": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "Jacob",
     "attempts": 0,
     "score": 0,
     "average": 0,

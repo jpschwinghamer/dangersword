@@ -2,6 +2,7 @@
 var players = [];
 var selectedPlayer = "";
 
+// Setup pubnub
 var pubnub = PUBNUB.init({
   publish_key: 'pub-c-a7321d4d-92be-47cb-bd61-ccf219a33e89',
   subscribe_key: 'sub-c-ca1d2302-80af-11e4-bfb6-02ee2ddab7fe'
@@ -22,6 +23,7 @@ function sortByScore(a,b) {
 
 // Initialize the scoreboard
 function initialize(){
+  FastClick.attach(document.body);
   enableBindings();
   getScores();
 };
@@ -159,4 +161,7 @@ function resetScores(){
 };
 
 // Initialize drrrrr
-initialize();
+$(document).ready(function(){
+  initialize();
+});
+
