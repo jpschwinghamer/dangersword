@@ -19,11 +19,11 @@
   },
   {
     "name": "Ghassan",
-    "attempts": 3,
-    "score": 40,
-    "average": 13.33,
+    "attempts": 0,
+    "score": 0,
+    "average": 0,
     "recent": [
-      40,
+      0,
       0,
       0,
       0,
@@ -37,13 +37,13 @@
   },
   {
     "name": "Salih",
-    "attempts": 3,
-    "score": 40,
-    "average": 13.33,
+    "attempts": 0,
+    "score": 0,
+    "average": 0,
     "recent": [
       0,
       0,
-      40,
+      0,
       0,
       0,
       0,
