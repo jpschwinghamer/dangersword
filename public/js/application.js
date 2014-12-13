@@ -164,4 +164,3 @@ function resetScores(){
 $(document).ready(function(){
   initialize();
 });
-
