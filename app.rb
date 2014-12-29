@@ -1,40 +1,35 @@
-require 'sinatra'
+require "sinatra"
+require "sinatra/activerecord"
 require "slim"
 require "sass"
 require "compass"
 require "autoprefixer-rails"
 require "json"
-require 'open-uri'
-
-SCORES_PATH = File.expand_path("public/scores.json", File.dirname(__FILE__))
-
-if development?
-  url = "http://www.dangersword.com/scores.json"
-  open(url, 'rb') do |feed|
-    File.open(SCORES_PATH, 'wb') do |file|
-      file.write(feed.read)
-    end
-  end
-end
-
+require "open-uri"
+require './environments'
+require './models'
 
 get '/' do
   slim :index
 end
 
-post '/update.json' do
-  scores = params[:data]
-  return if scores.empty?
-  file = Tempfile.new('scores.json')
-  begin
-    file.write(scores)
-    file.rewind
-    file.read
-    src = file.path
-    dest = SCORES_PATH
-    FileUtils.cp(src, dest)
-  ensure
-    file.close
-    file.unlink
+post '/' do
+  @score = Score.create(params[:data])
+end
+
+get '/scores' do
+  scoreboard = []
+  players = Player.all
+  players.each do |player|
+    player_stats = {}
+    this_player = Score.joins(:player).where("players.name = '#{player.name}'")
+    player_stats["id"] = player.id
+    player_stats["name"] = player.name
+    player_stats["scores"] = this_player.order(created_at: :desc).pluck(:points)
+    player_stats["average"] = this_player.average(:points).to_f.round(2)
+    player_stats["count"] = this_player.count.to_i
+    scoreboard << player_stats
   end
+  sorted = scoreboard.sort_by{ |k| k["average"] }.reverse
+  sorted.to_json
 end
