@@ -57,11 +57,21 @@ function deactivateScorecard(){
   $('body').removeClass('scorecard-active');
 }
 
+// Add Score
 function addScore(player, score){
   $.post("/", {
     data: {
       player_id: selectedPlayerID,
       points: score
+    }
+  }).done(pubnub.publish({channel: 'dangerscores', message: " "}));
+};
+
+// Add a new player
+function addPlayer(name){
+  $.post("/players/create", {
+    data: {
+      name: name
     }
   }).done(pubnub.publish({channel: 'dangerscores', message: " "}));
 };

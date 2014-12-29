@@ -17,6 +17,10 @@ post '/' do
   @score = Score.create(params[:data])
 end
 
+post '/players/create' do
+  @player = Player.create(params[:data])
+end
+
 get '/scores' do
   scoreboard = []
   players = Player.all
