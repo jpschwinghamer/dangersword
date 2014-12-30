@@ -9,6 +9,8 @@ require "open-uri"
 require './environments'
 require './models'
 
+set :bind, '0.0.0.0'
+
 get '/' do
   slim :index
 end
@@ -36,4 +38,9 @@ get '/scores' do
   end
   sorted = scoreboard.sort_by{ |k| k["average"] }.reverse
   sorted.to_json
+end
+
+get '/scores/:id' do
+  scores = Score.joins(:player).where("players.id = '#{params[:id]}'").order(created_at: :desc)
+  scores.to_json
 end

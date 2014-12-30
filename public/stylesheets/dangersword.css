@@ -1,24 +1,44 @@
-/* line 7, ../../sass/dangersword.sass */
+/* line 8, ../../sass/dangersword.sass */
 html, body {
   height: 100%;
 }
 
-/* line 10, ../../sass/dangersword.sass */
+/* line 11, ../../sass/dangersword.sass */
+body {
+  -webkit-transition: 0.25s all ease-in-out;
+          transition: 0.25s all ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+/* line 14, ../../sass/dangersword.sass */
+body.scorecard-active {
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+}
+@media (min-width: 718px) {
+  /* line 14, ../../sass/dangersword.sass */
+  body.scorecard-active {
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* line 19, ../../sass/dangersword.sass */
 .content {
   width: 90%;
 }
 
-/* line 13, ../../sass/dangersword.sass */
+/* line 22, ../../sass/dangersword.sass */
 .leaderboard {
   min-height: 100%;
 }
 
-/* line 16, ../../sass/dangersword.sass */
+/* line 25, ../../sass/dangersword.sass */
 .logo {
   font-size: 6em;
 }
 
-/* line 19, ../../sass/dangersword.sass */
+/* line 28, ../../sass/dangersword.sass */
 .player {
   cursor: pointer;
   display: -webkit-box;
@@ -35,11 +55,11 @@ html, body {
           justify-content: space-between;
   padding: 10px;
 }
-/* line 25, ../../sass/dangersword.sass */
+/* line 34, ../../sass/dangersword.sass */
 .player:hover {
   background-color: #fafafa;
 }
-/* line 27, ../../sass/dangersword.sass */
+/* line 36, ../../sass/dangersword.sass */
 .player .bio {
   display: -webkit-box;
   display: -webkit-flex;
@@ -51,7 +71,7 @@ html, body {
           align-items: center;
 }
 @media (min-width: 718px) {
-  /* line 27, ../../sass/dangersword.sass */
+  /* line 36, ../../sass/dangersword.sass */
   .player .bio {
     width: 245px;
     -webkit-box-flex: 0;
@@ -60,100 +80,128 @@ html, body {
             flex: 0 0 245px;
   }
 }
-/* line 33, ../../sass/dangersword.sass */
+/* line 42, ../../sass/dangersword.sass */
 .player .image {
   width: 42px;
   height: 42px;
   margin-right: 20px;
   background-size: cover;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.09);
   overflow: hidden;
+  border-radius: 50%;
 }
 @media (min-width: 718px) and (min-height: 718px) {
-  /* line 33, ../../sass/dangersword.sass */
+  /* line 42, ../../sass/dangersword.sass */
   .player .image {
     width: 100px;
     height: 100px;
   }
 }
-/* line 44, ../../sass/dangersword.sass */
+/* line 54, ../../sass/dangersword.sass */
 .player.ty .image {
   background-image: url(../images/ty.jpg);
 }
-/* line 47, ../../sass/dangersword.sass */
+/* line 57, ../../sass/dangersword.sass */
 .player.dave .image {
   background-image: url(../images/dave.jpg);
 }
-/* line 50, ../../sass/dangersword.sass */
+/* line 60, ../../sass/dangersword.sass */
 .player.nate .image {
   background-image: url(../images/nate.jpg);
 }
-/* line 53, ../../sass/dangersword.sass */
+/* line 63, ../../sass/dangersword.sass */
 .player.jimmy .image {
   background-image: url(../images/jimmy.jpg);
 }
-/* line 56, ../../sass/dangersword.sass */
+/* line 66, ../../sass/dangersword.sass */
 .player.michelle .image {
   background-image: url(../images/michelle.jpg);
 }
-/* line 59, ../../sass/dangersword.sass */
+/* line 69, ../../sass/dangersword.sass */
 .player.justin .image {
   background-image: url(../images/justin.jpg);
 }
-/* line 62, ../../sass/dangersword.sass */
+/* line 72, ../../sass/dangersword.sass */
 .player.aaron .image {
   background-image: url(../images/aaron.jpg);
 }
-/* line 65, ../../sass/dangersword.sass */
+/* line 75, ../../sass/dangersword.sass */
 .player.chris .image {
   background-image: url(../images/chris.jpg);
 }
-/* line 68, ../../sass/dangersword.sass */
+/* line 78, ../../sass/dangersword.sass */
 .player.jaclyn .image {
   background-image: url(../images/jaclyn.jpg);
 }
-/* line 71, ../../sass/dangersword.sass */
+/* line 81, ../../sass/dangersword.sass */
 .player.catherine .image {
   background-image: url(../images/catherine.jpg);
 }
-/* line 74, ../../sass/dangersword.sass */
+/* line 84, ../../sass/dangersword.sass */
 .player.jacob .image {
   background-image: url(../images/jacob.jpg);
 }
-/* line 77, ../../sass/dangersword.sass */
+/* line 87, ../../sass/dangersword.sass */
 .player.ghassan .image {
   background-image: url(../images/ghassan.jpg);
 }
-/* line 80, ../../sass/dangersword.sass */
+/* line 90, ../../sass/dangersword.sass */
 .player.salih .image {
   background-image: url(../images/salih.jpg);
 }
-/* line 83, ../../sass/dangersword.sass */
+/* line 93, ../../sass/dangersword.sass */
 .player.zach .image {
   background-image: url(../images/zach.jpg);
 }
-/* line 85, ../../sass/dangersword.sass */
+/* line 95, ../../sass/dangersword.sass */
 .player .graph {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
+  display: none;
 }
-/* line 87, ../../sass/dangersword.sass */
-.player .graph svg {
-  width: 100%;
-  height: auto;
-  max-height: 100px;
+@media (min-width: 718px) and (min-height: 718px) {
+  /* line 95, ../../sass/dangersword.sass */
+  .player .graph {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
-/* line 91, ../../sass/dangersword.sass */
-.player .graph path {
-  stroke-dasharray: 1300px 1300px;
-  stroke-dashoffset: 0;
-  -webkit-animation: 4s animatePath ease-in-out infinite;
-          animation: 4s animatePath ease-in-out infinite;
+/* line 104, ../../sass/dangersword.sass */
+.player .graph .bar {
+  height: 100px;
+  background-color: #2996cc;
+  margin: 0 10px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 25px;
+  border-radius: 2px 2px 0 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+  -webkit-animation: animateBars 8s ease-in-out infinite;
+          animation: animateBars 8s ease-in-out infinite;
 }
 @media (min-width: 718px) {
-  /* line 96, ../../sass/dangersword.sass */
+  /* line 113, ../../sass/dangersword.sass */
   .player .scores {
     width: 150px;
     -webkit-box-flex: 0;
@@ -162,51 +210,56 @@ html, body {
             flex: 0 0 150px;
   }
 }
-/* line 100, ../../sass/dangersword.sass */
+/* line 117, ../../sass/dangersword.sass */
 .player .score {
   text-align: right;
 }
-/* line 102, ../../sass/dangersword.sass */
+/* line 119, ../../sass/dangersword.sass */
 .player .score span {
   opacity: 0.3;
 }
 
-/* line 105, ../../sass/dangersword.sass */
+/* line 122, ../../sass/dangersword.sass */
 .scorecard {
-  background-color: rgba(92, 184, 230, 0.95);
   position: fixed;
+  top: 0;
   bottom: 0;
-  left: 0;
+  left: 100%;
   width: 100%;
   z-index: 1;
-  -webkit-transform: translate3d(0, 100%, 0);
-          transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   -webkit-transition: 0.25s all ease-in-out;
           transition: 0.25s all ease-in-out;
 }
-/* line 114, ../../sass/dangersword.sass */
-.scorecard .image {
-  display: inline-block;
-  width: 42px;
-  height: 42px;
-  background-size: cover;
-}
-@media (min-width: 718px) and (min-height: 718px) {
-  /* line 114, ../../sass/dangersword.sass */
-  .scorecard .image {
-    width: 100px;
-    height: 100px;
+@media (min-width: 718px) {
+  /* line 122, ../../sass/dangersword.sass */
+  .scorecard {
+    width: 50%;
   }
 }
-/* line 122, ../../sass/dangersword.sass */
-.scorecard-active .scorecard {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-}
-/* line 124, ../../sass/dangersword.sass */
+/* line 133, ../../sass/dangersword.sass */
 .scorecard .button {
+  width: 100%;
+  min-width: 0;
+}
+/* line 136, ../../sass/dangersword.sass */
+.scorecard .col {
+  margin-bottom: 20px;
+}
+/* line 138, ../../sass/dangersword.sass */
+.scorecard .col:nth-child(1n+5) {
+  margin-bottom: 0;
+}
+/* line 140, ../../sass/dangersword.sass */
+.scorecard .image {
   display: inline-block;
-  margin: 10px;
+  width: 100px;
+  height: 100px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.09);
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 @-webkit-keyframes animatePath {
@@ -236,5 +289,49 @@ html, body {
   }
   100% {
     stroke-dashoffset: 1300px;
+  }
+}
+@-webkit-keyframes animateBars {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  4% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  94% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes animateBars {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  4% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  94% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
   }
 }

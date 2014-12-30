@@ -48,13 +48,25 @@ function enableBindings(){
 // Select player to begin scoring
 function activateScorecard(id, name){
   $('.scorecard .image').css({'background-image' : 'url(/images/' + name.toLowerCase() + '.jpg)'});
-  $('.scorecard h4').html("Give " + name + " a score:");
+  $('.scorecard .bio h4').html("Give " + name + " a score:");
+  getSelectedPlayerScores(id);
   $('body').addClass('scorecard-active');
 }
 
 // Close the scorecard
 function deactivateScorecard(){
   $('body').removeClass('scorecard-active');
+}
+
+// Selected player feed
+function getSelectedPlayerScores(id){
+  selectedPlayerFeed = "/scores/" + id;
+  $.getJSON(selectedPlayerFeed, function(data){
+    $('.scorecard .chart .score').remove();
+    $.each(data, function(index, score){
+      $('.scorecard .chart').append('<div class="score"><h4>' + score.points + '</h4></div>');
+    })
+  })
 }
 
 // Add Score
@@ -64,7 +76,7 @@ function addScore(player, score){
       player_id: selectedPlayerID,
       points: score
     }
-  }).done(pubnub.publish({channel: 'dangerscores', message: " "}));
+  }).done(pubnub.publish({channel: 'dangerscores', message: "Score added."}));
 };
 
 // Add a new player
@@ -73,7 +85,7 @@ function addPlayer(name){
     data: {
       name: name
     }
-  }).done(pubnub.publish({channel: 'dangerscores', message: " "}));
+  }).done(pubnub.publish({channel: 'dangerscores', message: "Player Created."}));
 };
 
 function updateScoreboard(){
@@ -81,18 +93,13 @@ function updateScoreboard(){
   $.getJSON("scores", function(data){
     $.each(data, function(index, player){
       var recentScorePath = "";
-      // Iterate through recent scores and build up svg path data
+      var recentScoreGraph = "";
+      // Iterate through recent scores and build up svg path or graph data
       for(var i in player.scores){
-        if(i == 0){
-          var point = "M" + (1000 - i * 100) + "," + Math.abs(player.scores[i] - 100);
-          recentScorePath = recentScorePath.concat(point);
-        }
-        else if(i == 10) {
+        recentScoreGraph += '<div class="bar" data-bar-height="' + player.scores[i] + '" \
+        style="height: ' + player.scores[i] + '; opacity: ' + player.scores[i]/100 + '; -webkit-animation-delay: ' + 0.1 * i + 's"></div>';
+        if(i == 15){
           break;
-        }
-        else {
-          var point = "L" + (1000 - i * 100) + "," + Math.abs(player.scores[i] - 100);
-          recentScorePath = recentScorePath.concat(point);
         }
       }
       $('.leaderboard').append(' \
@@ -101,16 +108,16 @@ function updateScoreboard(){
             <div class="image"></div> \
             <h4 class="name">'+ player.name + '</h4> \
           </div> \
-          <div class="hidden show-at-medium graph"> \
-            <svg viewbox="0 0 1000 100"> \
-              <path fill="none" stroke="" stroke-width="2" preserveAspectRatio="xMidYMax" stroke-linejoin="round" stroke-linecap="round"  d="' + recentScorePath + '"/> \
-            </svg> \
-          </div> \
+          <div class="graph border-bottom">' +
+            recentScoreGraph +
+          '</div> \
           <div class="scores"> \
             <h4 class="score">' + player.average + '<span class="hidden show-at-medium inline">/' + player.count + '</span></h4> \
           </div> \
-        </div>');
+        </div>'
+      );
     });
+    getSelectedPlayerScores(selectedPlayerID);
   });
 }
 
