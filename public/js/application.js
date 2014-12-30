@@ -61,12 +61,14 @@ function deactivateScorecard(){
 // Selected player feed
 function getSelectedPlayerScores(id){
   selectedPlayerFeed = "/scores/" + id;
-  $.getJSON(selectedPlayerFeed, function(data){
-    $('.scorecard .chart .score').remove();
-    $.each(data, function(index, score){
-      $('.scorecard .chart').append('<div class="score"><h4>' + score.points + '</h4></div>');
-    })
-  })
+  if(id != ''){
+    $.getJSON(selectedPlayerFeed, function(data){
+      $('.scorecard .chart .score').remove();
+      $.each(data, function(index, score){
+        $('.scorecard .chart').append('<div class="score border-bottom pad-vert-col"><h4>' + score.points + '</h4><span>' + moment(score.created_at).fromNow() + '</span></div>');
+      });
+    });
+  };
 }
 
 // Add Score

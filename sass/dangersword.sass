@@ -3,6 +3,7 @@ $image-size-large: 100px
 $col-padding: 10px
 $path-length: 1300px
 $medium-width: 718px
+$large-width: 1024px
 $blue: #5cb8e6
 
 html, body
@@ -16,8 +17,16 @@ body
     @media (min-width: $medium-width)
       transform: translate3d(-50%,0,0)
 
+section
+  height: 100%
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+  padding: 0 $col-padding * 2
+  @media (min-width: $large-width)
+    padding: 0 $col-padding * 5
+
 .content
-  width: 90%
+  width: 100%
 
 .leaderboard
   min-height: 100%
@@ -110,6 +119,10 @@ body
       border-radius: 2px 2px 0 0
       transform: translate3d(0,100%,0)
       animation: animateBars 8s ease-in-out infinite
+      &:nth-child(1n+8)
+        display: none
+        @media (min-width: $large-width)
+          display: block
   .scores
     @media (min-width: $medium-width)
       width: 150px
@@ -145,6 +158,11 @@ body
     background-size: cover
     overflow: hidden
     border-radius: 50%
+  .recent-scores
+    .score
+      display: flex
+      justify-content: space-between
+      align-items: center
 
 @keyframes animatePath
   0%
