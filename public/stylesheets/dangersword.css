@@ -300,6 +300,20 @@ section {
       -ms-flex-align: center;
           align-items: center;
 }
+/* line 166, ../../sass/dangersword.sass */
+.scorecard .recent-scores .score .delete {
+  display: none;
+  color: red;
+  cursor: pointer;
+}
+/* line 170, ../../sass/dangersword.sass */
+.scorecard .recent-scores .score:hover {
+  background-color: white;
+}
+/* line 172, ../../sass/dangersword.sass */
+.scorecard .recent-scores .score:hover .delete {
+  display: block;
+}
 
 @-webkit-keyframes animatePath {
   0% {

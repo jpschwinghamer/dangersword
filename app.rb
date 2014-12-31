@@ -44,3 +44,7 @@ get '/scores/:id' do
   scores = Score.joins(:player).where("players.id = '#{params[:id]}'").order(created_at: :desc)
   scores.to_json
 end
+
+post '/scores/delete/:id' do
+  @score = Score.find(params[:id]).destroy
+end

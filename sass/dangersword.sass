@@ -163,6 +163,16 @@ section
       display: flex
       justify-content: space-between
       align-items: center
+      .delete
+        display: none
+        color: red
+        cursor: pointer
+      &:hover
+        background-color: white
+        .delete
+          display: block
+
+
 
 @keyframes animatePath
   0%

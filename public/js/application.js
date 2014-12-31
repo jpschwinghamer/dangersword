@@ -43,6 +43,15 @@ function enableBindings(){
     e.stopPropagation();
     addScore(selectedPlayerID, $(this).data('score'));
   })
+
+  $('body').on('click', '.scorecard .score', function(e){
+    e.stopPropagation();
+  });
+
+  $('body').on('click', '.scorecard .delete', function(e){
+    e.stopPropagation();
+    deleteScore($(this).parent().data('score-id'));
+  });
 }
 
 // Select player to begin scoring
@@ -65,7 +74,7 @@ function getSelectedPlayerScores(id){
     $.getJSON(selectedPlayerFeed, function(data){
       $('.scorecard .chart .score').remove();
       $.each(data, function(index, score){
-        $('.scorecard .chart').append('<div class="score border-bottom pad-vert-col"><h4>' + score.points + '</h4><span>' + moment(score.created_at).fromNow() + '</span></div>');
+        $('.scorecard .chart').append('<div class="score border-bottom pad-col" data-score-id="' + score.id + '"><h4>' + score.points + '</h4><span class="delete">Delete</span><span>' + moment(score.created_at).fromNow() + '</span></div>');
       });
     });
   };
@@ -79,6 +88,16 @@ function addScore(player, score){
       points: score
     }
   }).done(pubnub.publish({channel: 'dangerscores', message: "Score added."}));
+};
+
+// Delete Score
+function deleteScore(id){
+  deleteURL = "/scores/delete/" + id;
+  $.post(deleteURL, {
+    data: {
+      id: id
+    }
+  }).done(pubnub.publish({channel: 'dangerscores', message: "Score deleted."}));
 };
 
 // Add a new player
