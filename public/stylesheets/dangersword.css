@@ -307,17 +307,26 @@ section {
 }
 /* line 169, ../../sass/dangersword.sass */
 .scorecard .recent-scores .score .delete {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   color: red;
   cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: visibility 0s 0.25s, opacity 0.25s 0s linear;
+          transition: visibility 0s 0.25s, opacity 0.25s 0s linear;
 }
-/* line 173, ../../sass/dangersword.sass */
+/* line 176, ../../sass/dangersword.sass */
 .scorecard .recent-scores .score:hover {
   background-color: white;
 }
-/* line 175, ../../sass/dangersword.sass */
+/* line 178, ../../sass/dangersword.sass */
 .scorecard .recent-scores .score:hover .delete {
   display: block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.25s 0.25s linear;
+          transition: visibility 0s, opacity 0.25s 0.25s linear;
+  pointer-events: none;
 }
 
 @-webkit-keyframes animatePath {
