@@ -50,7 +50,14 @@ function enableBindings(){
 
   $('body').on('click', '.scorecard .delete', function(e){
     e.stopPropagation();
-    deleteScore($(this).parent().data('score-id'));
+    var sure = confirm("Delete this score?")
+    if (sure == true){
+      deleteScore($(this).parent().data('score-id'));
+    }
+    else {
+      console.log("nope")
+    };
+
   });
 }
 
