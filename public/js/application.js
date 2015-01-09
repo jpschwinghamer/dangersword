@@ -125,7 +125,7 @@ function updateScoreboard(){
       // Iterate through recent scores and build up svg path or graph data
       for(var i in player.scores){
         recentScoreGraph += '<div class="bar" data-bar-height="' + player.scores[i] + '" \
-        style="height: ' + player.scores[i] + '; opacity: ' + player.scores[i]/100 + '; -webkit-animation-delay: ' + 0.1 * i + 's"></div>';
+        style="height: ' + (player.scores[i] == 1000 ? 100 : player.scores[i]) + '; opacity: ' + player.scores[i]/100 + '; -webkit-animation-delay: ' + 0.1 * i + 's"></div>';
         if(i == 15){
           break;
         }
