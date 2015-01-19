@@ -49,3 +49,4 @@ end
 post '/scores/delete/:id' do
   @score = Score.find(params[:id]).destroy
 end
+
