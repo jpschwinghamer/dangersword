@@ -5,6 +5,7 @@ gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "rake"
+gem "chronic"
 
 gem "slim"
 gem "sass"

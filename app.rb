@@ -6,6 +6,7 @@ require "compass"
 require "autoprefixer-rails"
 require "json"
 require "open-uri"
+require "chronic"
 require './environments'
 require './models'
 
@@ -28,7 +29,7 @@ get '/scores' do
   players = Player.all
   players.each do |player|
     player_stats = {}
-    this_player = Score.joins(:player).where("players.name = '#{player.name}'")
+    this_player = Score.joins(:player).where("players.name = ? AND scores.created_at > ?", "#{player.name}", Chronic.parse('last sunday').to_s)
     player_stats["id"] = player.id
     player_stats["name"] = player.name
     player_stats["scores"] = this_player.order(created_at: :desc).pluck(:points)
