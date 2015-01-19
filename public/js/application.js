@@ -140,7 +140,7 @@ function updateScoreboard(){
             recentScoreGraph +
           '</div> \
           <div class="scores"> \
-            <h4 class="score">' + player.average + '<span class="hidden show-at-medium inline">/' + player.count + '</span></h4> \
+            <h4 class="score">' + player.average + '<span class="hidden show-at-medium inline">/' + (100 - player.count) + '</span></h4> \
           </div> \
         </div>'
       );
