@@ -240,6 +240,7 @@ banner {
           align-items: flex-end;
   overflow: hidden;
   display: none;
+  height: 100px;
 }
 @media (min-width: 718px) and (min-height: 718px) {
   /* line 128, ../../sass/dangersword.sass */
@@ -250,7 +251,7 @@ banner {
     display: flex;
   }
 }
-/* line 137, ../../sass/dangersword.sass */
+/* line 138, ../../sass/dangersword.sass */
 .player .graph .bar {
   height: 100px;
   background-color: #2996cc;
@@ -266,22 +267,22 @@ banner {
   -webkit-animation: animateBars 8s ease-in-out infinite;
           animation: animateBars 8s ease-in-out infinite;
 }
-/* line 146, ../../sass/dangersword.sass */
+/* line 147, ../../sass/dangersword.sass */
 .player .graph .bar:nth-child(1n+8) {
   display: none;
 }
 @media (min-width: 1024px) {
-  /* line 146, ../../sass/dangersword.sass */
+  /* line 147, ../../sass/dangersword.sass */
   .player .graph .bar:nth-child(1n+8) {
     display: block;
   }
 }
-/* line 150, ../../sass/dangersword.sass */
+/* line 151, ../../sass/dangersword.sass */
 .player .graph .bar[data-bar-height="1000"] {
   background-color: #e0c437;
 }
 @media (min-width: 718px) {
-  /* line 153, ../../sass/dangersword.sass */
+  /* line 154, ../../sass/dangersword.sass */
   .player .scores {
     width: 150px;
     -webkit-box-flex: 0;
@@ -290,16 +291,16 @@ banner {
             flex: 0 0 150px;
   }
 }
-/* line 157, ../../sass/dangersword.sass */
+/* line 158, ../../sass/dangersword.sass */
 .player .score {
   text-align: right;
 }
-/* line 159, ../../sass/dangersword.sass */
+/* line 160, ../../sass/dangersword.sass */
 .player .score span {
   opacity: 0.3;
 }
 
-/* line 162, ../../sass/dangersword.sass */
+/* line 163, ../../sass/dangersword.sass */
 .scorecard {
   position: fixed;
   top: 0;
@@ -313,25 +314,25 @@ banner {
           transition: 0.25s all ease-in-out;
 }
 @media (min-width: 718px) {
-  /* line 162, ../../sass/dangersword.sass */
+  /* line 163, ../../sass/dangersword.sass */
   .scorecard {
     width: 50%;
   }
 }
-/* line 173, ../../sass/dangersword.sass */
+/* line 174, ../../sass/dangersword.sass */
 .scorecard .button {
   width: 100%;
   min-width: 0;
 }
-/* line 176, ../../sass/dangersword.sass */
+/* line 177, ../../sass/dangersword.sass */
 .scorecard .col {
   margin-bottom: 20px;
 }
-/* line 178, ../../sass/dangersword.sass */
+/* line 179, ../../sass/dangersword.sass */
 .scorecard .col:nth-child(1n+5) {
   margin-bottom: 0;
 }
-/* line 180, ../../sass/dangersword.sass */
+/* line 181, ../../sass/dangersword.sass */
 .scorecard .image {
   display: inline-block;
   width: 100px;
@@ -341,7 +342,7 @@ banner {
   overflow: hidden;
   border-radius: 50%;
 }
-/* line 189, ../../sass/dangersword.sass */
+/* line 190, ../../sass/dangersword.sass */
 .scorecard .recent-scores .score {
   display: -webkit-box;
   display: -webkit-flex;
@@ -358,7 +359,7 @@ banner {
   -webkit-transition: all 0.25s linear;
           transition: all 0.25s linear;
 }
-/* line 194, ../../sass/dangersword.sass */
+/* line 195, ../../sass/dangersword.sass */
 .scorecard .recent-scores .score .delete {
   visibility: hidden;
   opacity: 0;
@@ -367,11 +368,11 @@ banner {
   -webkit-transition: visibility 0s 0.25s, opacity 0.25s 0s linear;
           transition: visibility 0s 0.25s, opacity 0.25s 0s linear;
 }
-/* line 200, ../../sass/dangersword.sass */
+/* line 201, ../../sass/dangersword.sass */
 .scorecard .recent-scores .score:hover {
   background-color: white;
 }
-/* line 202, ../../sass/dangersword.sass */
+/* line 203, ../../sass/dangersword.sass */
 .scorecard .recent-scores .score:hover .delete {
   display: block;
   visibility: visible;
